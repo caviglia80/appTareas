@@ -1,3 +1,3 @@
 # AppTareas
 
-## Aplicacion para acumular tareas.
+## ABM de tareas.

@@ -11,10 +11,22 @@ export class TareasComponent {
   nombreTarea: string = '';
 
 
-  agregarTarea() {
+  agregarTarea(): void {
     if (!this.nombreTarea.trim()) return;
 
-    console.log(this.nombreTarea);
+    const tarea: Tarea = {
+      nombre: this.nombreTarea,
+      estado: false
+    };
+    this.listaTareas.push(tarea);
+    this.nombreTarea = '';
   }
 
+  eliminarTarea(index: number): void {
+    this.listaTareas.splice(index, 1);
+  }
+
+  actualizarTarea(tarea: Tarea, index: number): void {
+    this.listaTareas[index].estado = !tarea.estado;
+  }
 }

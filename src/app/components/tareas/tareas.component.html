@@ -5,9 +5,26 @@
         (keydown.enter)="agregarTarea()">
     </div>
     <div class="col-lg-6 offset-lg-3 mt-3">
-      <div class="card p-2">
-        <h6>No hay tareas para mostrar.</h6>
+
+      <div *ngIf="listaTareas.length === 0" class="card p-2 text-center">
+        <h6 class="m-0 p-1">No hay tareas para mostrar</h6>
       </div>
+
+      <ul class="list-group">
+        <li *ngFor="let tarea of listaTareas; let i = index" class="
+        list-group-item list-group-item-warning
+        m-1
+        d-flex justify-content-between">
+          <span (click)="actualizarTarea(tarea, i)">
+            <i [ngClass]="tarea.estado ? 'bi bi-check-circle text-success' : 'bi bi-circle'"></i>
+          </span>
+          {{ tarea.nombre }}
+          <span class="trash" (click)="eliminarTarea(i)">
+            <i class="bi bi-trash"></i>
+          </span>
+        </li>
+      </ul>
+
     </div>
   </div>
 </div>

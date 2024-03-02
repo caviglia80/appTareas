@@ -1,4 +1,8 @@
 body {
-  background-image: url('./assets/fondo.jpg');
-  opacity: .9;
+  background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .3)), url('./assets/fondo.jpg');
+  opacity: .8;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
